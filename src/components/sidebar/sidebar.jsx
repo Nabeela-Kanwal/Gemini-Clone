@@ -10,8 +10,31 @@ const Sidebar = () => {
           <img src={assets.plus_icon} alt="" />
           <p>New Chat</p>
         </div>
+        <div className="recent">
+          <p class="recent-title">Recent</p>
+          <div className="recent-entry">
+            <img src={assets.message_icon} alt="" />
+            <p>What is React...</p>
+          </div>
+        </div>
       </div>
-      <div className="bottom"></div>
+
+      <div className="bottom">
+        <div className="bottom-item recent-entry">
+          <img src={assets.question_icon} alt="" />
+          <p>Help</p>
+        </div>
+
+        <div className="bottom-item recent-entry">
+          <img src={assets.history_icon} alt="" />
+          <p>History</p>
+        </div>
+
+        <div className="bottom-item recent-entry">
+          <img src={assets.setting_icon} alt="" />
+          <p>Settings</p>
+        </div>
+      </div>
     </div>
   );
 };
