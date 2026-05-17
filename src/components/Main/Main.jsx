@@ -1,5 +1,16 @@
-export const main = () => {
+import React from "react";
+import "./Main.css";
+import { assets } from "../../assets/assets";
+
+const Main = () => {
   return (
-    <div>main</div>
-  )
-}
+    <div className="main">
+      <div className="nav">
+        <p>Gemini</p>
+        <img src={assets.user_icon} alt="User" />
+      </div>
+    </div>
+  );
+};
+
+export default Main;
