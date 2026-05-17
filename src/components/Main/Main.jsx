@@ -1,4 +1,3 @@
-import React from "react";
 import "./Main.css";
 import { assets } from "../../assets/assets";
 
@@ -12,7 +11,7 @@ const Main = () => {
       <div className="main-container">
         <div className="greet">
           <p>
-            <span>Hello Div</span>
+            <span>Hello, Nabeela</span>
           </p>
           <p>How can i help you today?</p>
         </div>
@@ -24,17 +23,17 @@ const Main = () => {
 
           <div className="card">
             <p>Briefly summarize this concept urban plaining</p>
-            <img src={assets.compass_icon} alt="" />
+            <img src={assets.bulb_icon} alt="" />
           </div>
 
           <div className="card">
             <p>Brainstro team bonding activities for our work retreat</p>
-            <img src={assets.compass_icon} alt="" />
+            <img src={assets.message_icon} alt="" />
           </div>
 
           <div className="card">
             <p>Improve the readability of the following code</p>
-            <img src={assets.compass_icon} alt="" />
+            <img src={assets.code_icon} alt="" />
           </div>
         </div>
       </div>
