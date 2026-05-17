@@ -9,6 +9,35 @@ const Main = () => {
         <p>Gemini</p>
         <img src={assets.user_icon} alt="User" />
       </div>
+      <div className="main-container">
+        <div className="greet">
+          <p>
+            <span>Hello Div</span>
+          </p>
+          <p>How can i help you today?</p>
+        </div>
+        <div className="cards">
+          <div className="card">
+            <p>Suggest beautiful places to see on an upcomming road trip</p>
+            <img src={assets.compass_icon} alt="" />
+          </div>
+
+          <div className="card">
+            <p>Briefly summarize this concept urban plaining</p>
+            <img src={assets.compass_icon} alt="" />
+          </div>
+
+          <div className="card">
+            <p>Brainstro team bonding activities for our work retreat</p>
+            <img src={assets.compass_icon} alt="" />
+          </div>
+
+          <div className="card">
+            <p>Improve the readability of the following code</p>
+            <img src={assets.compass_icon} alt="" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
