@@ -1,53 +1,19 @@
-const apikey = "AIzaSyDMRcnzQRSOav_cB_RS3XfrUBIfJmWcen8";
-// To run this code you need to install the following dependencies:
-// npm install @google/genai mime
-// npm install -D @types/node
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-import {
-  GoogleGenAI,
-} from '@google/genai';
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+const modelName = import.meta.env.VITE_GEMINI_MODEL || "gemini-2.0-flash";
 
-async function main() {
-  const ai = new GoogleGenAI({
-    apiKey: process.env['GEMINI_API_KEY'],
-  });
-  const tools = [
-    {
-      googleSearch: {
-      }
-    },
-  ];
-  const config = {
-    thinkingConfig: {
-      thinkingLevel: ThinkingLevel.HIGH,
-    },
-    tools,
-  };
-  const model = 'gemini-3-flash-preview';
-  const contents = [
-    {
-      role: 'user',
-      parts: [
-        {
-          text: `INSERT_INPUT_HERE`,
-        },
-      ],
-    },
-  ];
-
-  const response = await ai.models.generateContentStream({
-    model,
-    config,
-    contents,
-  });
-  let fileIndex = 0;
-  for await (const chunk of response) {
-    if (chunk.text) {
-      console.log(chunk.text);
-    }
+async function runChat(prompt) {
+  if (!apiKey) {
+    throw new Error("Missing VITE_GEMINI_API_KEY in your .env file.");
   }
+
+  const genAI = new GoogleGenerativeAI(apiKey);
+  const model = genAI.getGenerativeModel({ model: modelName });
+  const result = await model.generateContent(prompt);
+  const response = result.response;
+
+  return response.text();
 }
 
-main();
-
-
+export default runChat;
